@@ -8,7 +8,6 @@ A correct functioning desktop relies on the following apps:
 1. The j4-dmenu-desktop dmenu replacement
 [![Travis Build](https://api.travis-ci.org/enkore/j4-dmenu-desktop.png)](https://travis-ci.org/enkore/j4-dmenu-desktop/)
  (make and install this).
-2. The [rofi](https://github.com/DaveDavenport/rofi) pop-up application switcher: useful for ssh connections to window switching.
-3. Some shell scripts for autolocking and gaussian blur in /shell
+2. Some shell scripts for autolocking and gaussian blur in /shell
 
 
