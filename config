@@ -177,7 +177,10 @@ bindsym Escape mode "default"
 ################################################################################
 # a lockdown menu
 ##################################################
-bindsym Mod4+Mod1+l exec i3lock
+bindsym Mod4+Mod1+l exec ~/bin/scripts/lock/gaussianblur.sh
+
+# a autolock system
+
 
 ###################################################
 
