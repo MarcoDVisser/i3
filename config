@@ -76,8 +76,8 @@ bindsym Mod4+a focus parent
 #bindsym Mod4+d focus child
 
 # switch to workspace
-bindsym Mod4+1 workspace 1:www
-bindsym Mod4+2 workspace 2
+bindsym Mod4+1 workspace 1:main
+bindsym Mod4+2 workspace 2:www
 bindsym Mod4+3 workspace 3
 bindsym Mod4+4 workspace 4
 bindsym Mod4+5 workspace 5:VM
@@ -90,8 +90,8 @@ bindsym Mod4+0 workspace 10
 
 
 # move focused container to workspace
-bindsym Mod4+Shift+1 move container to workspace 1:www
-bindsym Mod4+Shift+2 move container to workspace 2
+bindsym Mod4+Shift+1 move container to workspace 1:main
+bindsym Mod4+Shift+2 move container to workspace 2:www
 bindsym Mod4+Shift+3 move container to workspace 3
 bindsym Mod4+Shift+4 move container to workspace 4
 bindsym Mod4+Shift+5 move container to workspace 5:VM
@@ -115,9 +115,11 @@ bindsym Mod4+Shift+e exit
 # take a screen shotp
 bindsym Print exec  xfce4-screenshooter
 
+## start main session
+bindsym Mod1+Mod4+x exec xterm -e htop, exec xterm -e "cmatrix -b -a -u3", exec terminator -e "newsbeuter -u ~/bin/rssfeeds/feeds.txt"
+
 ## start R session + emacs
 bindsym Mod1+Mod4+r exec emacs, exec terminator -e R
-
 
 # show editor
 bindsym Mod1+Mod4+e exec emacs
@@ -128,8 +130,8 @@ for_window [class="Clementine"] floating enable
 
 ## automatically make new workspaces
 ## xprop | grep -i 'class' to find class
-assign [class="X-www-browser"] → 1:www
-assign [class="Icedove"] → 1:www
+assign [class="X-www-browser"] → 2:www
+assign [class="Icedove"] → 2:www
 assign [class="VirtualBox"] → 5:VM
 for_window [class="VirtualBox"] fullscreen enable
 
@@ -137,10 +139,23 @@ for_window [class="VirtualBox"] fullscreen enable
 # spawn a web browser
 bindsym Mod4+b exec x-www-browser
 
-# spawn a web browser
+# layout monitor
 bindsym Mod4+Mod1+1 exec $HOME/bin/scripts/lenovo.sh
 bindsym Mod4+Mod1+2 exec $HOME/bin/scripts/vgaright_lenovo.sh
 bindsym Mod4+Mod1+3 exec $HOME/bin/scripts/lenovo_hdmiright.sh
+
+# old dmenu
+bindsym Mod4+Mod1+d exec dmenu_run
+
+#scratchpad
+# Make the currently focused window a scratchpad
+bindsym Mod4+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym Mod4+minus scratchpad show
+
+# Show the sup-mail scratchpad window, if any.
+bindsym Mod1+Mod4+s [title="^Sup ::"] scratchpad show
 
 # audio keysw
 bindsym XF86AudioRaiseVolume exec amixer set Master 10%+ unmute
@@ -151,12 +166,17 @@ bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 
+## JUMP to urgent window
+bindsym Mod4+x [urgent=latest] focus
+
 ## setup
-exec hsetroot -tile /home/marcov/bin/images/011\ leaf\ cutter\ ants.jpg
+exec hsetroot -tile /home/marcov/images/wallpapers/bcifrog.jpg
 exec nm-applet
 exec xfce4-power-manager
 exec update-notifier
 exec workrave
+exec ~/.dropbox-dist/dropbox-lnx.x86_64-2.10.3$ ./dropboxd&
+
 ##################################################
 # A menu
 ##################################################
@@ -170,6 +190,7 @@ mode $MENU {
 bindsym f exec thunar, mode "default"
 bindsym m exec icedove, mode "default"
 bindsym e exec emacs, mode "default"
+bindsym 1 exec terminator -e "ssh marcov@lilo.science.ru.nl", mode "default"
 bindsym Return mode "default"
 bindsym Escape mode "default"
 }
