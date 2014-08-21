@@ -166,10 +166,10 @@ bindsym Mod1+Mod4+s [title="^Sup ::"] scratchpad show
 bindsym XF86AudioRaiseVolume exec amixer set Master 10%+ unmute
 bindsym XF86AudioLowerVolume exec amixer set Master 10%- unmute
 bindsym XF86AudioMute exec amixer set Master toggle
-bindsym XF86AudioStop exec mpc stop
-bindsym XF86AudioPlay exec mpc toggle
-bindsym XF86AudioNext exec mpc next
-bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioStop exec qdbus org.mpris.clementine /Player Stop
+bindsym XF86AudioPlay  exec qdbus org.mpris.clementine /Player Pause
+bindsym XF86AudioNext exec qdbus org.mpris.clementine /Player Next
+bindsym XF86AudioPrev exec qdbus org.mpris.clementine /Player Prev
 
 ## JUMP to urgent window
 bindsym Mod4+x [urgent=latest] focus
