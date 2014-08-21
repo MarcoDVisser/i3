@@ -147,6 +147,8 @@ bindsym Mod4+Mod1+1 exec $HOME/bin/scripts/laptopscreen.sh
 bindsym Mod4+Mod1+2 exec $HOME/bin/scripts/vgaright.sh
 bindsym Mod4+Mod1+3 exec $HOME/bin/scripts/hdmiright.sh
 
+## move workspaces
+
 # old dmenu
 bindsym Mod4+Mod1+d exec dmenu_run
 
@@ -187,13 +189,15 @@ bindsym Mod4+p exec --no-startup-id  i3-dmenu-desktop
 
 set $MENU "Files"
 
-bindsym Mod4+Control+m mode $MENU, i3status("test")
+bindsym Mod4+Control+m mode $MENU
 
 mode $MENU {
 bindsym f exec thunar, mode "default"
 bindsym m exec icedove, mode "default"
 bindsym e exec emacs, mode "default"
 bindsym 1 exec terminator -e "ssh marcov@lilo.science.ru.nl", mode "default"
+bindsym Left move workspace to output left
+bindsym Right move workspace to output right
 bindsym Return mode "default"
 bindsym Escape mode "default"
 }
