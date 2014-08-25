@@ -180,7 +180,7 @@ exec nm-applet
 exec xfce4-power-manager
 exec update-notifier
 exec workrave
-exec ~/.dropbox-dist/dropbox-lnx.x86_64-2.10.3$ ./dropboxd&
+exec ~/.dropbox-dist/dropboxd &
 
 ##################################################
 # A menu
@@ -196,8 +196,8 @@ bindsym f exec thunar, mode "default"
 bindsym m exec icedove, mode "default"
 bindsym e exec emacs, mode "default"
 bindsym 1 exec terminator -e "ssh marcov@lilo.science.ru.nl", mode "default"
-bindsym Left move workspace to output left
-bindsym Right move workspace to output right
+bindsym Left move workspace to output left, mode "default"
+bindsym Right move workspace to output right,  mode "default"
 bindsym Return mode "default"
 bindsym Escape mode "default"
 }
