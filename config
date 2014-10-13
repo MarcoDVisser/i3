@@ -175,7 +175,7 @@ bindsym XF86AudioPrev exec qdbus org.mpris.clementine /Player Prev
 bindsym Mod4+x [urgent=latest] focus
 
 ## Start-up scripts!
-exec hsetroot exec $HOME/bin/scripts/randomimage.sh
+exec $HOME/bin/scripts/randomimage.sh
 exec hsetroot -tile $HOME/bin/images/wp/tmp.jpg
 exec nm-applet
 exec xfce4-power-manager
