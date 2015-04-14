@@ -8,6 +8,9 @@
 # To get a config file with the same key positions, but for your current
 # layout, use the i3-config-wizard
 
+## TIPS
+## install dunst as a notification system!
+
 
 # Font For Window Titles. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -264,4 +267,4 @@ bar {
 #
 # Please remove the following exec line:
 #######################################################################
-exec i3-config-wizard
+#exec i3-config-wizard
