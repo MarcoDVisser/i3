@@ -63,7 +63,7 @@ bindsym Mod4+s layout stacking
 bindsym Mod4+w layout tabbed
 bindsym Mod4+e layout default
 
-# toggle tiling / floating
+# toggle tiling / floa^ting
 bindsym Mod4+Shift+space floating toggle
 
 # change focus between tiling / floating windows
@@ -176,7 +176,8 @@ bindsym Mod4+x [urgent=latest] focus
 
 ## Start-up scripts!
 exec $HOME/bin/scripts/randomimage.sh
-exec hsetroot -tile $HOME/bin/images/wp/tmp.jpg
+## exec hsetroot -center $HOME/bin/images/wp/tmp.jpg
+exec --no-startup-id feh --bg-scale $HOME/bin/images/wp/tmp.jpg
 exec nm-applet
 exec xfce4-power-manager
 exec update-notifier
