@@ -119,7 +119,7 @@ bindsym Mod4+Shift+e exit
 bindsym Print exec  xfce4-screenshooter
 
 ## start main session
-bindsym Mod1+Mod4+x exec xterm -e htop, exec xterm -e "cmatrix -b -a -u3", exec xterm -e "newsbeuter -u ~/bin/rssfeeds/feeds.txt"
+bindsym Mod1+Mod4+x exec xterm -e htop, exec xterm -e "weechat-curses", exec xterm -e "newsbeuter -u ~/bin/rssfeeds/feeds.txt"
 
 ## start R session + emacs
 bindsym Mod1+Mod4+r exec emacs, exec terminator -e R
