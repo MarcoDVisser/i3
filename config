@@ -14,6 +14,7 @@
 
 # Font For Window Titles. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango: Monospace 8
 
 # use Mouse+Mod1 to drag floating windows to their wanted position
 floating_modifier Mod4
@@ -177,16 +178,6 @@ bindsym XF86AudioPrev exec qdbus org.mpris.clementine /Player Prev
 ## JUMP to urgent window
 bindsym Mod4+x [urgent=latest] focus
 
-## Start-up scripts!
-exec $HOME/bin/scripts/randomimage.sh
-## exec hsetroot -center $HOME/bin/images/wp/tmp.jpg
-exec --no-startup-id feh --bg-scale $HOME/bin/images/wp/tmp.jpg
-exec nm-applet
-exec xfce4-power-manager
-exec update-notifier
-exec workrave
-exec ~/.dropbox-dist/dropboxd &
-
 ##################################################
 # A menu
 ##################################################
@@ -243,21 +234,32 @@ mode "resize" {
 
 bindsym Mod4+r mode "resize"
 
+## colours
+client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
+client.focused_inactive #333333 #5F676A #ffffff #484e50
+client.unfocused        #333333 #424242 #888888 #292d2e
+client.urgent           #C10004 #900000 #ffffff #900000
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
  status_command i3status
  position top
+ tray_output LVDS
  #font -misc-fixed-medium-r-normal--8-120-75-75-C-70-iso10646-1
- font pango:DejaVu Sans Mono, Ionicons, FontAwesome 8
+ font pango: Monospace, Ionicons, FontAwesome 8
  colors {
- background #000000
- statusline #33aaff
+        background #232323
+        statusline #DCDCDC
  focused_workspace #11aaff #005500
  active_workspace #11aaff #005500
  urgent_workspace #ffffff #990000
  }
 }
+
+
+
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
 # keysym-based config which used his favorite modifier (alt or windows)
@@ -268,3 +270,14 @@ bar {
 # Please remove the following exec line:
 #######################################################################
 #exec i3-config-wizard
+
+
+## Start-up scripts!
+exec $HOME/bin/scripts/randomimage.sh
+## exec hsetroot -center $HOME/bin/images/wp/tmp.jpg
+exec --no-startup-id feh --bg-scale $HOME/bin/images/wp/tmp.jpg
+exec nm-applet
+exec xfce4-power-manager
+exec update-notifier
+exec workrave
+exec ~/.dropbox-dist/dropboxd &
