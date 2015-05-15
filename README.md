@@ -10,4 +10,4 @@ A correct functioning desktop relies on the following apps:
  (make and install this).
 2. Some shell scripts for autolocking and gaussian blur in /shell
 
-
+The makefile attempts to setup the system automatically.

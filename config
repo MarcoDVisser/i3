@@ -246,7 +246,9 @@ client.urgent           #C10004 #900000 #ffffff #900000
 bar {
  status_command i3status
  position top
- tray_output LVDS
+ tray_output LVDS-1
+ tray_output LVDS1
+
  #font -misc-fixed-medium-r-normal--8-120-75-75-C-70-iso10646-1
  font pango: Monospace, Ionicons, FontAwesome 8
  colors {
@@ -278,6 +280,7 @@ exec $HOME/bin/scripts/randomimage.sh
 exec --no-startup-id feh --bg-scale $HOME/bin/images/wp/tmp.jpg
 exec nm-applet
 exec xfce4-power-manager
+exec dunst 
 exec update-notifier
 exec workrave
 exec ~/.dropbox-dist/dropboxd &
